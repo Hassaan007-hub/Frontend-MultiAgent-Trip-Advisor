@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local env files (secrets)
+.env
+.env.*
+!.env.example
+
+# TypeScript build cache
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
