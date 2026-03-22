@@ -44,7 +44,11 @@ export async function planTrip(payload: PlanTripRequest): Promise<ItineraryRespo
 
 export async function deletePlans(): Promise<void> {
   try {
-    await fetch(`${API_BASE_URL}/plans`, { method: 'DELETE' })
+    const headers: Record<string, string> = {}
+    if (API_KEY.trim()) {
+      headers['X-API-Key'] = API_KEY.trim()
+    }
+    await fetch(`${API_BASE_URL}/plans`, { method: 'DELETE', headers })
   } catch {
     // best-effort cleanup — ignore errors
   }
